@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-nuxt-events-studio",
+  "name": "urdal-studio",
   "version": "1.0.8",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",

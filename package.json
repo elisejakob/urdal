@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-nuxt-events",
+  "name": "urdal",
   "version": "1.0.10",
   "scripts": {
     "build": "lerna run build --parallel",
