@@ -3,7 +3,6 @@
 import {defer, from as observableFrom, of as observableOf, throwError} from 'rxjs'
 import {mergeMap} from 'rxjs/operators'
 
-// eslint-disable-next-line import/no-commonjs
 const {StructureBuilder} = require('@sanity/structure')
 
 let prevStructureError = null
@@ -61,7 +60,6 @@ export function getDefaultStructure () {
 
 // We are lazy-requiring/resolving the structure inside of a function in order to catch errors
 // on the root-level of the module. Any loading errors will be caught and emitted as errors
-// eslint-disable-next-line complexity
 export function loadStructure () {
   let structure
   try {

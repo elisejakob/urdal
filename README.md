@@ -1,6 +1,6 @@
 # Urdal
 
-_Data-driven conference website in Vue.js. Speakers, sessions, and scheduling._
+_Data-driven conference website in Vue.js. Speakers, projects, and scheduling._
 
 Deployed from [sanity.io/create](https://www.sanity.io/create/?template=sanity-io%2Fsanity-template-nuxt-events).
 

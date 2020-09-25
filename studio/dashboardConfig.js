@@ -1,11 +1,5 @@
 export default {
   widgets: [
-    {
-      name: 'sanity-tutorials',
-      options: {
-        templateRepoId: 'sanity-io/sanity-template-nuxt-events'
-      }
-    },
     {name: 'structure-menu'},
     {
       name: 'project-info',
@@ -14,8 +8,6 @@ export default {
           {
             name: 'netlify',
             options: {
-              description:
-                'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
               sites: [
                 {
                   buildHookId: '',
@@ -46,7 +38,7 @@ export default {
     {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: {title: 'Recently created sessions', order: '_createdAt desc', types: ['session']},
+      options: {title: 'Recently created projects', order: '_createdAt desc', types: ['project']},
       layout: {width: 'medium'}
     }
   ]
