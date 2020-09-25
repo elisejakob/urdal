@@ -1,4 +1,4 @@
-import icon from 'react-icons/lib/md/av-timer'
+import icon from 'react-icons/lib/md/collections'
 
 export default {
   name: 'project',
@@ -10,6 +10,16 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title'
+    },
+    {
+      title: 'Feature on front page',
+      name: 'featured',
+      type: 'boolean'
+    },
+    {
+      title: 'Ongoing project',
+      name: 'ongoing',
+      type: 'boolean'
     },
     {
       name: 'image',

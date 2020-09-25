@@ -10,7 +10,7 @@ import ProjectList from '~/components/ProjectList'
 
 const query = `
   {
-    "projects": *[_type == "project"]
+    "projects": *[_type == "project" && featured]
   }
 `
 

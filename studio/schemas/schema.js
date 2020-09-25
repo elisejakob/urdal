@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document types
 import about from './documents/about'
 import project from './documents/project'
+import journal from './documents/journal'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -24,6 +25,7 @@ export default createSchema({
     // in the studio.
     about,
     project,
+    journal,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

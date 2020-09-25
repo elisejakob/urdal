@@ -1,6 +1,6 @@
 <template>
   <footer>
-    (c) Urdal
+    <a href="mailto:thea@urdal.no" target="_blank">thea@urdal.no</a>
   </footer>
 </template>
 

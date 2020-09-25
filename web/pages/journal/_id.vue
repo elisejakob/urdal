@@ -2,16 +2,8 @@
   <main>
     <SanityImage v-if="image" :image="image" />
     <div class="content">
-      <p class="projectType">{{ projectType }}</p>
       <h1 class="projectTitle">{{ title }}</h1>
       <p class="summary">{{ summary }}</p>
-      <div class="projectContent">
-        <BlockContent
-          :blocks="description"
-          :v-if="description"
-          :serializers="serializers"
-        />
-      </div>
     </div>
   </main>
 </template>
@@ -23,10 +15,10 @@ import sanityClient from '~/sanityClient'
 import SanityImage from '~/components/SanityImage'
 
 const query = groq`
-  *[_type == "project" && _id == $id] {
+  *[_type == "journal" && _id == $id] {
     ...,
-    persons[] {
-      person-> {
+    journal[] {
+      journal-> {
         ...,
         image {
           ...,

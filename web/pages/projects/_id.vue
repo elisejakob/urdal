@@ -2,8 +2,8 @@
   <main>
     <SanityImage v-if="image" :image="image" />
     <div class="content">
-      <p class="projectType">{{ projectType }}</p>
-      <h1 class="projectTitle">{{ title }}</h1>
+      <p class="project-type">{{ projectType }}</p>
+      <h1 class="project-title">{{ title }}</h1>
       <p class="summary">{{ summary }}</p>
       <div class="projectContent">
         <BlockContent
@@ -25,8 +25,8 @@ import SanityImage from '~/components/SanityImage'
 const query = groq`
   *[_type == "project" && _id == $id] {
     ...,
-    persons[] {
-      person-> {
+    projects[] {
+      project-> {
         ...,
         image {
           ...,
