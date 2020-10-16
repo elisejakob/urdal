@@ -19,7 +19,8 @@ header {
 
   .site-title {
     font-family: $serif;
-    font-size: 2rem;
+    font-weight: 400;
+    font-size: 2.8rem;
   }
   a {
     display: inline-block;
@@ -28,9 +29,18 @@ header {
   }
   nav a {
     margin-left: 2rem;
+    transition: all .24s ease;
+
+    &:hover {
+      color: yellow;
+    }
 
     &.nuxt-link-active {
       font-style: italic;
+      text-decoration: underline;
+      &:hover {
+        color: inherit;
+      }
     }
   }
 }

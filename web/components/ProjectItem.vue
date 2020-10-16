@@ -33,6 +33,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.project {
+  font-size: 1rem;
 
+  h3 {
+    font-size: 1rem;
+  }
+}
 </style>

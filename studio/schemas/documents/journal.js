@@ -12,6 +12,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'publishedAt',
+      title: 'Published',
+      type: 'datetime'
+    },
+    {
       name: 'image',
       type: 'mainImage',
       title: 'Image'

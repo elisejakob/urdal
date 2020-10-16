@@ -12,6 +12,16 @@ export default {
       title: 'Title'
     },
     {
+      name: 'subhead',
+      type: 'string',
+      title: 'Subhead'
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published',
+      type: 'datetime'
+    },
+    {
       title: 'Feature on front page',
       name: 'featured',
       type: 'boolean'

@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1 class="title">Projects</h1>
     <ProjectList v-if="projects" :projects="projects" />
   </main>
 </template>

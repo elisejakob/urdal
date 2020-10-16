@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1 class="title">About</h1>
     <BlockContent v-if="body" :blocks="body" :serializers="serializers" />
   </main>
 </template>

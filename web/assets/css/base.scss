@@ -1,5 +1,5 @@
 html {
-	font-size: calc(14px + 6 * ((100vw - 320px) / 1200));
+	font-size: calc(14px + 6 * ((100vw - 320px) / 1920));
   min-height: 100%;
 }
 
@@ -21,7 +21,6 @@ body {
 }
 
 header, main, footer {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -29,7 +28,6 @@ header, main, footer {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.24;
   margin-top: 0;
-  font-weight: 400;
 }
 
 p {
