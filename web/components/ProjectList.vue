@@ -4,7 +4,10 @@
       <nuxt-link :to="{ path: `/projects/${project._id}` }">
         <SanityImage v-if="project.image" :image="project.image" class="project-image" />
         <div class="project-text">
-          <h3><span class="number">{{ index+1 }}.</span> {{ project.title }}</h3>
+          <h3>
+            <span class="number">{{ index+1 }}.</span> {{ project.title }}<br />
+            {{ project.subhead }}
+          </h3>
           <p>
             {{ project.summary }}
           </p>

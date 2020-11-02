@@ -6,6 +6,7 @@
         <nuxt-link :to="{ path: `/projects/${project._id}` }">{{
           project.title || 'Undefined title'
         }}</nuxt-link>
+        {{ project.subhead }}
       </h3>
       <p>
         {{ project.summary }}

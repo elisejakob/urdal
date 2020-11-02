@@ -6,7 +6,10 @@
     </figure>
     <div class="content">
       <p class="project-type">{{ projectType }}</p>
-      <h1 class="project-title">{{ title }}</h1>
+      <h1 class="project-title">
+        {{ title }}<br />
+        <span>{{ subhead }}</span>
+      </h1>
       <p class="summary">{{ summary }}</p>
       <div class="project-content">
         <BlockContent
