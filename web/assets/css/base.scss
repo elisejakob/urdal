@@ -39,6 +39,11 @@ h1, h2, h3, h4, h5, h6 {
 p {
   max-width: 36rem;
   margin: 0 0 2rem;
+
+  &.lead {
+    font-size: 1.4rem;
+    max-width: 54rem;
+  }
 }
 
 img {
