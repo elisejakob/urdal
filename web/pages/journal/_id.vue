@@ -1,9 +1,15 @@
 <template>
   <main>
-    <SanityImage v-if="image" :image="image" />
-    <div class="content">
-      <h1 class="projectTitle">{{ title }}</h1>
-      <p class="summary">{{ summary }}</p>
+    <figure v-if="image" class="journal-image">
+      <SanityImage :image="image" />
+      <figcaption>{{ image.caption }}</figcaption>
+    </figure>
+    <div class="journal-text">
+      <h1 class="journal-title">{{ title }}</h1>
+      <p class="journal-summary">{{ summary }}</p>
+      <div class="journal-content">
+        <BlockContent v-if="body" :blocks="body" />
+      </div>
     </div>
   </main>
 </template>
@@ -36,6 +42,21 @@ export default {
   },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
+  },
+  head() {
+    if (!this || !this.info) {
+      return
+    }
+    return {
+      title: 'Urdal:' + this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.info.description
+        }
+      ]
+    }
   }
 }
 </script>

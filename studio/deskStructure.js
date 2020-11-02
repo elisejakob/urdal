@@ -4,7 +4,7 @@ import MdEventNote from 'react-icons/lib/md/event'
 import MdInfo from 'react-icons/lib/md/info-outline'
 
 const hiddenDocTypes = listItem =>
-  !['project', 'about'].includes(listItem.getId())
+  !['project', 'journal', 'about'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -14,6 +14,10 @@ export default () =>
         .title('Projects')
         .schemaType('project')
         .child(S.documentTypeList('project').title('Projects')),
+      S.listItem()
+        .title('Journal')
+        .schemaType('journal')
+        .child(S.documentTypeList('journal').title('Journal')),
       S.listItem()
         .title('About')
         .icon(MdPerson)

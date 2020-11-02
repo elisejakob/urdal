@@ -4,9 +4,15 @@
   </footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
 footer {
   padding: 1.5rem;
   text-align: center;
+
+  a {
+    font-size: 2.4rem;
+    font-family: $serif;
+  }
 }
 </style>

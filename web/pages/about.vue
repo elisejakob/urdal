@@ -1,28 +1,34 @@
 <template>
   <main>
+    <p class="lead">{{ lead }}</p>
     <BlockContent v-if="body" :blocks="body" :serializers="serializers" />
+    <Content v-if="content" :sections="content" />
   </main>
 </template>
 
 <script>
 import sanityClient from '~/sanityClient'
 import EventBlock from '~/components/blockContent/EventBlock'
+import Content from '~/components/Content'
 import BlockContent from 'sanity-blocks-vue-component'
 
 const query = `
   *[_id == "about"][0] {
+    lead,
     body[] {
       ...,
       children[] {
         ...,
         event->
       }
-    }
+    },
+    content
   }
 `
 export default {
   components: {
-    BlockContent
+    BlockContent,
+    Content
   },
   data() {
     return {
@@ -35,6 +41,21 @@ export default {
   },
   async asyncData() {
     return await sanityClient.fetch(query)
+  },
+  head() {
+    if (!this || !this.info) {
+      return
+    }
+    return {
+      title: 'Urdal: About',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.info.description
+        }
+      ]
+    }
   }
 }
 </script>

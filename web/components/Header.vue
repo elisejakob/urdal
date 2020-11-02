@@ -16,11 +16,18 @@
 header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 
   .site-title {
     font-family: $serif;
     font-weight: 400;
-    font-size: 2.8rem;
+    font-size: $font-l;
+    margin: 0;
+    line-height: 1;
   }
   a {
     display: inline-block;
@@ -30,6 +37,7 @@ header {
   nav a {
     margin-left: 2rem;
     transition: all .24s ease;
+    font-size: 2rem;
 
     &:hover {
       color: yellow;

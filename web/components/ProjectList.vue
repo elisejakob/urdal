@@ -70,7 +70,7 @@ export default {
     transition: all .3s ease;
   }
   &-text {
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 1.4rem;
     margin: 0;
     z-index: 10;
@@ -102,6 +102,10 @@ export default {
     .project-text {
       background: yellow;
       border-color: yellow;
+      transform: translate(0, -1.5rem);
+    }
+    .project-image {
+      transform: translate(1.5rem, 0);
     }
 
     &:hover {

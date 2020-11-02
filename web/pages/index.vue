@@ -26,7 +26,7 @@ export default {
       return
     }
     return {
-      title: this.info.name,
+      title: 'Urdal',
       meta: [
         {
           hid: 'description',

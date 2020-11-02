@@ -5,9 +5,29 @@ export default {
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
+      name: 'lead',
+      type: 'text',
+      title: 'Lead'
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
-      title: 'About'
+      title: 'Body'
+    },
+    {
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      of: [
+        {
+          type: 'richText',
+          title: 'Text'
+        },
+        {
+          type: 'mainImage',
+          title: 'Image'
+        }
+      ]
     }
   ],
   preview: {

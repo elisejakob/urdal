@@ -18,6 +18,21 @@ export default {
   components: { ProjectList },
   async asyncData() {
     return await sanityClient.fetch(query)
+  },
+  head() {
+    if (!this || !this.info) {
+      return
+    }
+    return {
+      title: 'Urdal: Projects',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.info.description
+        }
+      ]
+    }
   }
 }
 </script>

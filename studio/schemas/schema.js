@@ -11,6 +11,7 @@ import journal from './documents/journal'
 
 // Object types
 import mainImage from './objects/mainImage'
+import richText from './objects/richText'
 import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
 
@@ -30,6 +31,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     mainImage,
+    richText,
     bioPortableText,
     bodyPortableText
   ])

@@ -50,13 +50,27 @@ export default {
     {
       name: 'summary',
       type: 'text',
-      title: 'Short summary',
-      description: 'For previews, social media etc.'
+      title: 'Lead'
     },
     {
       name: 'description',
       type: 'bodyPortableText',
       title: 'Description'
+    },
+    {
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      of: [
+        {
+          type: 'richText',
+          title: 'Text'
+        },
+        {
+          type: 'mainImage',
+          title: 'Image'
+        }
+      ]
     }
   ],
   preview: {
