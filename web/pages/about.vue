@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="about">
     <p class="lead">{{ lead }}</p>
     <BlockContent v-if="body" :blocks="body" :serializers="serializers" />
     <Content v-if="content" :sections="content" />
@@ -43,19 +43,22 @@ export default {
     return await sanityClient.fetch(query)
   },
   head() {
-    if (!this || !this.info) {
-      return
-    }
     return {
       title: 'Urdal: About',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.info.description
+          content: this.lead
         }
       ]
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.about {
+  margin-top: 6rem;
+}
+</style>

@@ -59,8 +59,8 @@ export default {
   padding: 2rem;
 
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp .8s ease;
+  transform: translateY(-20px);
+  animation: fadeDown .8s ease;
   animation-fill-mode: forwards;
 
   a {
@@ -137,7 +137,7 @@ export default {
   }
 }
 
-@keyframes fadeUp {
+@keyframes fadeDown {
   to {
     opacity: 1;
     transform: translateY(0);

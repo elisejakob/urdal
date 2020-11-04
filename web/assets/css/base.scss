@@ -1,5 +1,5 @@
 html {
-	font-size: calc(14px + 6 * ((100vw - 320px) / 1920));
+	font-size: calc(14px + 6 * ((100vw - 320px) / 1600));
   min-height: 100%;
 }
 
@@ -27,7 +27,16 @@ header, main, footer {
 }
 
 main {
-  margin-top: 5rem;
+  margin: 4.8rem auto 4rem;
+  opacity: 0;
+  animation: fade .3s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,11 +47,18 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   max-width: 36rem;
-  margin: 0 0 2rem;
+  margin: 0;
+  line-height: 1.8;
+
+  + p {
+    text-indent: 3em;
+  }
 
   &.lead {
-    font-size: 1.4rem;
+    font-size: $font-m;
     max-width: 54rem;
+    line-height: 1.5;
+    margin: 0 0 1.4em;
   }
 }
 
@@ -55,5 +71,10 @@ a {
 }
 
 figure {
-  margin: 0;
+  margin: 0 0 2rem;
+}
+
+figcaption {
+  font-family: $serif;
+  font-size: .9rem;
 }

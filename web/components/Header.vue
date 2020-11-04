@@ -21,6 +21,8 @@ header {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 1000;
+  background: linear-gradient($color-background, transparent);
 
   .site-title {
     font-family: $serif;
@@ -37,7 +39,7 @@ header {
   nav a {
     margin-left: 2rem;
     transition: all .24s ease;
-    font-size: 2rem;
+    font-size: $font-m;
 
     &:hover {
       color: yellow;

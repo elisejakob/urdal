@@ -11,7 +11,7 @@
         <figcaption>{{ entry.image.caption }}</figcaption>
       </figure>
       <div class="entry-text">
-        <p>
+        <p class="lead">
           {{ entry.summary }}
         </p>
         <div class="journal-content">
