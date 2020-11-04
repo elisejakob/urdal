@@ -75,12 +75,12 @@ export default {
 .project {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 2rem;
+  grid-column-gap: 2rem;
   &-title {
     grid-column: 1 / span 12;
     font-size: $font-l;
     font-family: $serif;
-    margin: 0;
+    margin: 0 0 4rem;
 
     opacity: 0;
     transform: translateY(-20px);
@@ -103,7 +103,14 @@ export default {
     }
   }
   &-content {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
+
+    p, div {
+      grid-column: span 6;
+    }
   }
 }
 @keyframes fadeDown {

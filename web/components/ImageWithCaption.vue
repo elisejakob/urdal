@@ -17,3 +17,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.journal-image {
+  img {
+    width: 100%;
+  }
+}
+</style>

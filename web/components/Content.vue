@@ -21,3 +21,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.content {
+  grid-column: 1 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 2rem;
+
+  p, div {
+    grid-column: span 6;
+  }
+}
+</style>
