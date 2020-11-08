@@ -1,5 +1,5 @@
 <template>
-  <ul class="project-list">
+  <ul class="project-list" :class="{index: index}">
     <li v-for="(project, index) in projects" class="project" :style="{ animationDelay: index/10 + 's' }" :key="index">
       <nuxt-link :to="{ path: `/projects/${project._id}` }">
         <SanityImage v-if="project.image" :image="project.image" class="project-image" />
@@ -38,7 +38,8 @@ export default {
     projects: {
       type: Array,
       default: () => []
-    }
+    },
+    index: Boolean
   }
 }
 </script>
@@ -51,7 +52,6 @@ export default {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 2rem;
   place-items: center;
 }
 .project {
@@ -66,6 +66,8 @@ export default {
   a {
     text-decoration: none;
     color: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
   }
   &-image {
     z-index: 1;
@@ -119,6 +121,29 @@ export default {
         transform: translate(1.2rem, -3rem);
       }
     }
+  }
+  &:nth-child(3n+3) {  
+    .project-text {
+      order: 1;
+      transform: translate(0, 1.5rem);
+    }
+    .project-image {
+      order: 2;
+      transform: translate(2rem, 0);
+    }
+    &:hover {
+      .project-text {
+        transform: translate(.5rem, 2rem);
+      }
+      .project-image {
+        transform: translate(2.5rem, -.5rem);
+      }
+    }
+  }
+}
+.project-list.index {
+  .project:first-of-type {
+    transform: translateY(10rem);
   }
 }
 @media (min-width: $media-l) {
