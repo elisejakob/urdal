@@ -5,6 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document types
+import general from './documents/general'
 import about from './documents/about'
 import project from './documents/project'
 import journal from './documents/journal'
@@ -12,6 +13,8 @@ import journal from './documents/journal'
 // Object types
 import mainImage from './objects/mainImage'
 import richText from './objects/richText'
+import pdf from './objects/pdf'
+import footer from './objects/footer'
 import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
 
@@ -24,6 +27,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    general,
     about,
     project,
     journal,
@@ -32,6 +36,8 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     mainImage,
     richText,
+    pdf,
+    footer,
     bioPortableText,
     bodyPortableText
   ])

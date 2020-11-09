@@ -1,17 +1,6 @@
 <template>
   <main class="project">
-    <h1 class="project-title">
-      {{ title }}
-      <span v-if="subhead" class="project-subhead">&mdash; {{ subhead }}</span>
-    </h1>
-    <div class="project-lead">
-      <!--<p class="project-type">{{ projectType }}</p>-->
-      <p class="lead">{{ summary }}</p>
-    </div>
-    <figure v-if="image" class="project-image">
-      <SanityImage :image="image" />
-      <figcaption>{{ image.caption }}</figcaption>
-    </figure>
+    <ProjectHeader :title="title" :subhead="subhead" :summary="summary" :type="projectType" :image="image" />
     <div class="project-content">
       <BlockContent
         :blocks="description"
@@ -28,6 +17,7 @@ import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import SanityImage from '~/components/SanityImage'
 import Content from '~/components/Content'
+import ProjectHeader from '~/components/ProjectHeader'
 
 const query = groq`
   *[_type == "project" && _id == $id] {
@@ -49,7 +39,8 @@ export default {
   components: {
     BlockContent,
     SanityImage,
-    Content
+    Content,
+    ProjectHeader
   },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
@@ -73,37 +64,7 @@ export default {
 @import '@/assets/css/variables.scss';
 
 .project {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 2rem;
-  &-title {
-    grid-column: 1 / span 12;
-    font-size: $font-l;
-    font-family: $serif;
-    margin: 0 0 4rem;
-
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeDown .8s ease;
-    animation-fill-mode: forwards;
-  }
-  &-subhead,
-  &-type {
-    opacity: .3;
-  }
-  &-lead {
-    grid-column: 1 / span 6;
-  }
-  &-image {
-    grid-column: 7 / span 6;
-    padding-top: .6rem;
-
-    img {
-      width: 100%;
-    }
-  }
   &-content {
-    grid-column: 1 / span 12;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 2rem;
@@ -111,12 +72,6 @@ export default {
     p, div {
       grid-column: span 6;
     }
-  }
-}
-@keyframes fadeDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

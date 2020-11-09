@@ -14,18 +14,6 @@
         </div>
       </nuxt-link>
     </li>
-
-    <li v-for="(project, index) in projects" class="project" :key="index">
-      <nuxt-link :to="{ path: `/projects/${project._id}` }">
-        <SanityImage v-if="project.image" :image="project.image" class="project-image" />
-        <div class="project-text">
-          <h3><span class="number">{{ index+1 }}.</span> {{ project.title }}</h3>
-          <p>
-            {{ project.summary }}
-          </p>
-        </div>
-      </nuxt-link>
-    </li>
   </ul>
 </template>
 <script>

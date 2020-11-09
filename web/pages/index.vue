@@ -28,16 +28,13 @@ export default {
     return await sanityClient.fetch(query)
   },
   head() {
-    if (!this || !this.info) {
-      return
-    }
     return {
       title: 'Urdal',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.info.description
+          content: this.about.lead
         }
       ]
     }

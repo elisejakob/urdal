@@ -7,6 +7,7 @@
       <nuxt-link to="/projects">Projects</nuxt-link>
       <nuxt-link to="/journal">Journal</nuxt-link>
       <nuxt-link to="/about">About</nuxt-link>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 </template>
@@ -15,6 +16,7 @@
 @import '@/assets/css/variables.scss';
 header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -22,7 +24,7 @@ header {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient($color-background, transparent);
+  background: linear-gradient($color-background, rgba(255, 255, 255, 0));
 
   .site-title {
     font-family: $serif;

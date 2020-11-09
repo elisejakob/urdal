@@ -69,6 +69,10 @@ export default {
         {
           type: 'mainImage',
           title: 'Image'
+        },
+        {
+          type: 'pdf',
+          title: 'PDF'
         }
       ]
     }

@@ -1,23 +1,97 @@
 <template>
   <footer>
-    <a href="mailto:thea.urdal@gmail.com" target="_blank">thea.urdal@gmail.com</a>
-    <a href="mailto:thea.urdal@gmail.com" target="_blank">instagram</a>
-    <a href="mailto:thea.urdal@gmail.com" target="_blank">og sånt</a>
+    <h1>Contact</h1>
+    <div class="contact" id="contact">
+      <h2 class="contact-label">E-mail</h2>
+      <a class="contact-link" :href="`mailto:${footer.email}`" target="_blank">{{ footer.email }}</a>
+      <h2 class="contact-label">Instagram</h2>
+      <a class="contact-link" :href="`https://instagram.com/${footer.instagram}`" target="_blank">@{{ footer.instagram }}</a>
+    </div>
+    <div class="credit">
+      <BlockContent
+        :blocks="footer.credit"
+        :v-if="footer.credit"
+      />
+    </div>
+    <div class="totop" @click="toTop()">
+      &uarr;
+    </div>
   </footer>
 </template>
+
+<script>
+import BlockContent from 'sanity-blocks-vue-component'
+
+export default {
+  components: {
+    BlockContent
+  },
+  computed: {
+    footer() {
+      return this.$store.state.global.footer
+    }
+  },
+  methods: {
+    toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
 footer {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  min-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-top: 1px solid $color-text;
-  padding-bottom: 10rem;
+  position: relative;
 
-  a {
-    grid-column: span 4;
-    font-size: 1.6rem;
+  h1 {
+    font-size: $font-l;
     font-family: $serif;
+    margin: 0;
+  }
+
+  .contact {
+    width: 100%;
+    font-family: $serif;
+    margin: auto 0;
+    &-label {
+      font-family: $sans-serif;
+      font-size: $font-m;
+      margin-bottom: 0;
+    }
+    &-link {
+      display: inline-block;
+      font-size: $font-l;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .credit {
+    font-size: .9rem;
+    margin: auto 0 0 0;
+    width: 100%;
+
+    p {
+      max-width: none;
+    }
+  }
+
+  .totop {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+    font-size: $font-l;
+    line-height: 1;
+    cursor: pointer;
   }
 }
 </style>

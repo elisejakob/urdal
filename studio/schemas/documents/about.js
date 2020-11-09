@@ -7,7 +7,8 @@ export default {
     {
       name: 'lead',
       type: 'text',
-      title: 'Lead'
+      title: 'Lead',
+      description: 'Also used on the front page and in Google search results etc.'
     },
     {
       name: 'body',
