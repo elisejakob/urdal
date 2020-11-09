@@ -1,13 +1,11 @@
 <template>
   <main class="project">
     <ProjectHeader :title="title" :subhead="subhead" :summary="summary" :type="projectType" :image="image" />
-    <div class="project-content">
-      <BlockContent
-        :blocks="description"
-        v-if="description"
-      />
-      <Content v-if="content" :sections="content" />
-    </div>
+    <BlockContent
+      :blocks="description"
+      v-if="description"
+    />
+    <Content v-if="content" :sections="content" />
   </main>
 </template>
 
@@ -59,19 +57,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import '@/assets/css/variables.scss';
-
-.project {
-  &-content {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: 2rem;
-
-    p, div {
-      grid-column: span 6;
-    }
-  }
-}
-</style>

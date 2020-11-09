@@ -55,7 +55,7 @@ footer {
   h1 {
     font-size: $font-l;
     font-family: $serif;
-    margin: 0;
+    margin: 0 0 3rem;
   }
 
   .contact {
@@ -71,12 +71,27 @@ footer {
       display: inline-block;
       font-size: $font-l;
       margin-bottom: 3rem;
+      text-decoration: none;
+      transition: color .3s ease-in-out;
+
+      &:before {
+        display: inline-block;
+        content: "→";
+        font-size: $font-l;
+        font-family: $sans-serif;
+        margin-right: 1rem;
+        transform: translateY(.24rem);
+      }
+      &:hover {
+        color: $color-highlight;
+      }
     }
   }
 
   .credit {
-    font-size: .9rem;
+    font-size: $font-xs;
     margin: auto 0 0 0;
+    padding-right: 6rem;
     width: 100%;
 
     p {

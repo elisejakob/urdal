@@ -11,13 +11,13 @@ export default {
               sites: [
                 {
                   buildHookId: '',
-                  title: 'Sanity Studio',
+                  title: 'Studio',
                   name: 'urdal-studio',
                   apiId: '697ccadb-36cc-4100-94d3-a038fa158c14'
                 },
                 {
                   buildHookId: '5f63660eb9988c00a14defde',
-                  title: 'Events Website',
+                  title: 'Website',
                   name: 'urdal',
                   apiId: '50c69441-a550-44d6-86d3-c0dc19ac19a3'
                 }

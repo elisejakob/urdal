@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="project-header">
     <h1 class="project-title">
       {{ title }}
       <span v-if="subhead" class="project-subhead">&mdash; {{ subhead }}</span>
@@ -38,11 +38,13 @@ export default {
 .project-header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 2rem;
 }
 .project {
   &-title {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 8;
+    grid-row: 2 / span 1;
     font-size: $font-l;
     font-family: $serif;
     margin: 0 0 4rem;
@@ -54,9 +56,14 @@ export default {
   }
   &-lead {
     grid-column: 1 / span 6;
+    grid-row: 3 / span 2;
+    p {
+      font-size: 1.2rem;
+    }
   }
   &-image {
     grid-column: 7 / span 6;
+    grid-row: 1 / span 4;
     padding-top: .6rem;
 
     img {

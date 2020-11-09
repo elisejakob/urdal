@@ -44,7 +44,7 @@ header {
     font-size: $font-m;
 
     &:hover {
-      color: yellow;
+      color: $color-highlight;
     }
 
     &.nuxt-link-active {

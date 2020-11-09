@@ -93,8 +93,8 @@ export default {
 
   &:nth-child(odd) {
     .project-text {
-      background: yellow;
-      border-color: yellow;
+      background: $color-highlight;
+      border-color: $color-highlight;
       transform: translate(0, -1.5rem);
     }
     .project-image {
