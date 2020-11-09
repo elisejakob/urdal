@@ -8,7 +8,7 @@ const routesQuery = `
 `
 
 export default {
-  ssr: true,
+  ssr: false,
 
   /*
    ** Headers of the page
