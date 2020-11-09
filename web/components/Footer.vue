@@ -89,7 +89,7 @@ footer {
   }
 
   .credit {
-    font-size: $font-xs;
+    font-size: $font-s;
     margin: auto 0 0 0;
     padding-right: 6rem;
     width: 100%;

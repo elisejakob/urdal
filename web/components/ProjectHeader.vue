@@ -48,6 +48,7 @@ export default {
     font-size: $font-l;
     font-family: $serif;
     margin: 0 0 4rem;
+    text-shadow: 0 0 .1em rgba(255, 255, 255, .6);
 
     opacity: 0;
     transform: translateY(-20px);

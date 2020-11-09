@@ -75,6 +75,18 @@ export default {
           title: 'PDF'
         }
       ]
+    },
+    {
+      name: 'bgColor',
+      type: 'color',
+      title: 'Background color',
+      description: 'Used as text background in the list of projects on the front page and project page.'
+    },
+    {
+      name: 'textColor',
+      type: 'color',
+      title: 'Text color',
+      description: 'Used as text and border color.'
     }
   ],
   preview: {

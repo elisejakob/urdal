@@ -59,6 +59,6 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  margin-top: 6rem;
+  margin-top: 12rem;
 }
 </style>

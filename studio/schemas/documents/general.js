@@ -10,6 +10,12 @@ export default {
       title: 'Footer'
     },
     {
+      name: 'mainColor',
+      type: 'color',
+      title: 'Main color',
+      description: 'Used when hovering the cursor over links in the main menu and footer, plus on the border of the front page bio.'
+    },
+    {
       name: 'ogimg',
       type: 'image',
       title: 'Facebook image',
