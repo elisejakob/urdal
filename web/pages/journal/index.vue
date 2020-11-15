@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="journal">
     <p class="lead">{{ intro.journal }}</p>
     <Journal v-if="journal" :entries="journal" />
   </main>
@@ -39,3 +39,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.journal {
+  margin-top: 8rem;
+}
+</style>

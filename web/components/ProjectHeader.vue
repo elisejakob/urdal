@@ -1,13 +1,21 @@
 <template>
-  <div class="project-header">
-    <h1 class="project-title">
-      {{ title }}
-      <span v-if="subhead" class="project-subhead">&mdash; {{ subhead }}</span>
-    </h1>
-    <div class="project-lead">
-      <p class="lead">{{ summary }}</p>
+  <div class="project-header" :style="cssVars">
+    <div class="project-text">
+       <div class="project-meta">
+        <span v-if="type" class="project-type">{{ type }}</span>
+        <span v-if="year" class="project-year">
+          <Date :rawDate="year" yearonly />
+        </span>
+        <span v-if="ongoing" class="project-ongoing">Ongoing</span>
+      </div>
+      <h1 class="project-title">
+        {{ title }}
+        <span v-if="subhead" class="project-subhead">&mdash; {{ subhead }}</span>
+      </h1>
+      <div class="project-lead" v-if="summary">
+        <p class="lead">{{ summary }}</p>
+      </div>
     </div>
-    <p class="project-type">{{ type }}</p>
     <figure v-if="image" class="project-image">
       <SanityImage :image="image" />
       <figcaption>{{ image.caption }}</figcaption>
@@ -17,6 +25,7 @@
 
 <script>
 import SanityImage from '~/components/SanityImage'
+import Date from '~/components/Date'
 
 export default {
   props: {
@@ -24,10 +33,29 @@ export default {
     subhead: String,
     summary: String,
     type: String,
-    image: Object
+    ongoing: Boolean,
+    image: Object,
+    year: String,
+    textColor: Object,
+    bgColor: Object
   },
   components: {
-    SanityImage
+    SanityImage,
+    Date
+  },
+  computed: {
+    cssVars() {
+      if (this.bgColor && this.textColor) {
+        return {
+          '--bg-color': this.bgColor.hex,
+          '--text-color': this.textColor.hex,
+        }
+      }
+      return {
+        '--bg-color': this.$store.state.global.mainColor.hex,
+        '--text-color': '#000',
+      }
+    }
   }
 }
 </script>
@@ -38,33 +66,44 @@ export default {
 .project-header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 2rem;
 }
 .project {
+  &-text {
+    grid-column: 1 / span 6;
+    padding: 40% 0 4rem;
+  }
   &-title {
-    grid-column: 1 / span 8;
-    grid-row: 2 / span 1;
+    width: calc(100% + 4em);
     font-size: $font-l;
     font-family: $serif;
     margin: 0 0 4rem;
-    text-shadow: 0 0 .1em rgba(255, 255, 255, .6);
+    text-shadow: -.02em .02em .08em rgba(255, 255, 255, .8);
 
     opacity: 0;
     transform: translateY(-20px);
     animation: fadeDown .8s ease;
     animation-fill-mode: forwards;
   }
+  &-meta {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: $font-s;
+    padding-left: .24em;
+    margin: 0 0 .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   &-lead {
     grid-column: 1 / span 6;
-    grid-row: 3 / span 2;
     p {
-      font-size: 1.2rem;
+      font-size: $font-lead-s;
     }
   }
   &-image {
     grid-column: 7 / span 6;
-    grid-row: 1 / span 4;
     padding-top: .6rem;
 
     img {

@@ -78,6 +78,7 @@ export default {
   &-header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
 
     &-content,
     &-portrait {

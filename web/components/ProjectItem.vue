@@ -7,7 +7,7 @@
           <span class="number">{{ index+1 }}.</span> {{ project.title }}<br />
           {{ project.subhead }}
         </h3>
-        <p>
+        <p v-if="project.summary">
           {{ project.summary }}
         </p>
         <div v-if="project.ongoing" class="project-ongoing">Ongoing</div>

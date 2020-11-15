@@ -6,7 +6,7 @@
     </figure>
     <div class="journal-text">
       <h1 class="journal-title">{{ title }}</h1>
-      <p class="journal-summary">{{ summary }}</p>
+      <p class="journal-summary" v-if="summary">{{ summary }}</p>
       <div class="journal-content">
         <BlockContent v-if="body" :blocks="body" />
       </div>

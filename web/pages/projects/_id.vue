@@ -1,6 +1,16 @@
 <template>
   <main class="project">
-    <ProjectHeader :title="title" :subhead="subhead" :summary="summary" :type="projectType" :image="image" />
+    <ProjectHeader 
+      :title="title" 
+      :subhead="subhead" 
+      :summary="summary" 
+      :type="projectType" 
+      :ongoing="ongoing"
+      :image="image" 
+      :year="publishedAt"
+      :bgColor="bgColor"
+      :textColor="textColor"
+    />
     <BlockContent
       :blocks="description"
       v-if="description"
