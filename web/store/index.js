@@ -14,6 +14,7 @@ export const actions = {
   async nuxtServerInit ({ commit }) {
     const query = `
       *[_id == "general"][0] {
+        journal,
         footer,
         mainColor
       }

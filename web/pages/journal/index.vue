@@ -1,5 +1,6 @@
 <template>
   <main>
+    <p class="lead">{{ intro.journal }}</p>
     <Journal v-if="journal" :entries="journal" />
   </main>
 </template>
@@ -10,7 +11,10 @@ import Journal from '~/components/Journal'
 
 const query = `
   {
-    "journal": *[_type == "journal"]
+    "journal": *[_type == "journal"] | order(publishedAt desc),
+    "intro": *[_id == "general"][0] {
+      journal
+    }
   }
 `
 

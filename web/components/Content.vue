@@ -32,6 +32,7 @@ export default {
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 2rem;
   margin: 3rem 0;
+  align-items: center;
 
   p, div {
     grid-column: span 6;

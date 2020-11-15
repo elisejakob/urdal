@@ -67,6 +67,9 @@ export default {
     z-index: 10;
     transform: translate(1.5rem, -1.5rem);
     transition: all .3s ease;
+    p {
+      line-height: 1.3;
+    }
   }
   h3 {
     font-size: 1rem;
@@ -78,7 +81,7 @@ export default {
     }
   }
 
-  /*&:hover {
+  &:hover {
     .project-image {
       transform: translate(0, .5rem);
       transition: all .6s ease;
@@ -87,7 +90,7 @@ export default {
       transform: translate(1.5rem, -2rem);
       transition: all .6s ease;
     }
-  }*/
+  }
 
   &:nth-child(odd) {
     .project-text {
@@ -99,14 +102,14 @@ export default {
       transform: translate(1.5rem, 0);
     }
 
-    /*&:hover {
+    &:hover {
       .project-image {
         transform: translate(.5rem, .5rem);
       }
       .project-text {
         transform: translate(1.2rem, -3rem);
       }
-    }*/
+    }
   }
   &:nth-child(3n+3) {  
     .project-text {
@@ -117,14 +120,14 @@ export default {
       order: 2;
       transform: translate(2rem, 0);
     }
-    /*&:hover {
+    &:hover {
       .project-text {
         transform: translate(.5rem, 2rem);
       }
       .project-image {
         transform: translate(2.5rem, -.5rem);
       }
-    }*/
+    }
   }
   &-ongoing {
     font-size: $font-xs;

@@ -38,10 +38,10 @@ export default {
   }
 
   ul {
-    font-family: 'Montserrat', sans-serif;
-    list-style: square;
+    margin: 0;
+    padding: 0 1rem;
     li {
-      margin-bottom: .75rem;
+      margin-bottom: .5rem;
     }
   }
 }

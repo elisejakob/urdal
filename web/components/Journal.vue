@@ -58,6 +58,10 @@ export default {
 
     &-text {
       grid-column: 7 / span 6;
+
+      .lead {
+        font-size: 1.42rem;
+      }
     }
 
     &-title {

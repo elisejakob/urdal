@@ -5,6 +5,12 @@ export default {
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
+      name: 'journal',
+      type: 'text',
+      title: 'Journal lead',
+      description: 'Intro text displayed in the header of the journal page.'
+    },
+    {
       name: 'footer',
       type: 'footer',
       title: 'Footer'
