@@ -16,6 +16,11 @@ export default {
       title: 'Body'
     },
     {
+      name: 'image',
+      type: 'mainImage',
+      title: 'Image'
+    },
+    {
       name: 'content',
       type: 'array',
       title: 'Content',

@@ -1,7 +1,15 @@
 <template>
   <main class="about">
     <p class="lead">{{ lead }}</p>
-    <BlockContent v-if="body" :blocks="body" :serializers="serializers" />
+    <div class="about-header">
+      <div class="about-header-content">
+        <BlockContent v-if="body" :blocks="body" :serializers="serializers" />
+      </div>
+      <figure v-if="image" class="about-header-portrait">
+        <SanityImage :image="image" />
+        <figcaption>{{ image.caption }}</figcaption>
+      </figure>
+    </div>
     <Content v-if="content" :sections="content" />
   </main>
 </template>
@@ -11,6 +19,7 @@ import sanityClient from '~/sanityClient'
 import EventBlock from '~/components/blockContent/EventBlock'
 import Content from '~/components/Content'
 import BlockContent from 'sanity-blocks-vue-component'
+import SanityImage from '~/components/SanityImage'
 
 const query = `
   *[_id == "about"][0] {
@@ -22,13 +31,18 @@ const query = `
         event->
       }
     },
+    image {
+      ...,
+      asset->
+    },
     content
   }
 `
 export default {
   components: {
     BlockContent,
-    Content
+    Content,
+    SanityImage
   },
   data() {
     return {
@@ -60,5 +74,15 @@ export default {
 <style lang="scss" scoped>
 .about {
   margin-top: 12rem;
+
+  &-header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &-content,
+    &-portrait {
+      grid-column: span 6;
+    }
+  }
 }
 </style>

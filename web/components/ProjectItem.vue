@@ -11,6 +11,7 @@
           {{ project.summary }}
         </p>
         <div v-if="project.ongoing" class="project-ongoing">Ongoing</div>
+        <div v-if="project.norwegian" class="project-ongoing">Only in Norwegian</div>
       </div>
     </nuxt-link>
   </li>

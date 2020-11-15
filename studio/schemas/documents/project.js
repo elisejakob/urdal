@@ -32,6 +32,11 @@ export default {
       type: 'boolean'
     },
     {
+      title: 'In Norwegian',
+      name: 'norwegian',
+      type: 'boolean'
+    },
+    {
       name: 'image',
       type: 'mainImage',
       title: 'Image'
