@@ -30,6 +30,25 @@ export default {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body text'
+    },
+    {
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+      of: [
+        {
+          type: 'richText',
+          title: 'Text'
+        },
+        {
+          type: 'mainImage',
+          title: 'Image'
+        },
+        {
+          type: 'pdf',
+          title: 'PDF'
+        }
+      ]
     }
   ],
   preview: {

@@ -2,22 +2,29 @@
   <div class="journal-body" :class="{ open: open }">
     <div class="journal-body-readmore" @click="open = !open">
       <span class="readmore-text">Read the whole thing</span>
-      <span>&darr;</span>
+      <span>
+        <template v-if="open">&#10005;</template>
+        <template v-else>&darr;</template>
+      </span>
     </div>
     <div class="journal-body-content" :class="{ open: open }">
-      <BlockContent v-if="content" :blocks="content" />
+      <Content v-if="content" :sections="content" />
+      <BlockContent v-else-if="body" :blocks="body" />
     </div>
   </div>
 </template>
 
 <script>
+import Content from '~/components/Content'
 import BlockContent from 'sanity-blocks-vue-component'
 
 export default {
   props: {
-    content: Object
+    content: Array,
+    body: Array
   },
   components: {
+    Content,
     BlockContent
   },
   data() {
@@ -43,7 +50,7 @@ export default {
   }
   &-content {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 1rem 0 1.5rem;
     display: none;
 
     &.open {

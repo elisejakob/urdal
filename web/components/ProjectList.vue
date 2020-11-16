@@ -38,7 +38,8 @@ export default {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  place-items: center;
+  align-items: center;
+  max-width: none;
 }
 .project {
   opacity: 0;
