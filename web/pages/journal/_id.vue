@@ -17,6 +17,7 @@
         <BlockContent v-else-if="body" :blocks="body" class="entry-body" />
       </div>
     </div>
+    <nuxt-link to="/journal" class="viewall">Read more journal entries</nuxt-link>
   </main>
 </template>
 
@@ -139,5 +140,8 @@ li:nth-child(odd) {
       order: 3;
     }
   }
+}
+.viewall {
+  grid-column: 2 / span 10;
 }
 </style>
