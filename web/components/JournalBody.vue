@@ -8,8 +8,8 @@
       </span>
     </div>
     <div class="journal-body-content" :class="{ open: open }">
-      <Content v-if="content" :sections="content" />
-      <BlockContent v-else-if="body" :blocks="body" />
+      <BlockContent v-if="body" :blocks="body" />
+      <Content v-if="content" :sections="content" journal />
     </div>
   </div>
 </template>

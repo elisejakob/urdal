@@ -14,7 +14,8 @@
       <p class="lead" v-if="entry.summary">
         {{ entry.summary }}
       </p>
-      <JournalBody v-if="entry.content" :content="entry.content" class="entry-body" />
+      <JournalBody v-if="entry.content && entry.body" :content="entry.content" :body="entry.body" class="entry-body" />
+      <JournalBody v-else-if="entry.content" :content="entry.content" class="entry-body" />
       <JournalBody v-else-if="entry.body" :body="entry.body" class="entry-body" />
     </div>
   </li>

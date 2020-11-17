@@ -13,8 +13,8 @@
         <p class="lead" v-if="summary">
           {{ summary }}
         </p>
-        <Content v-if="content" :sections="content" class="entry-body" />
-        <BlockContent v-else-if="body" :blocks="body" class="entry-body" />
+        <BlockContent v-if="body" :blocks="body" class="entry-body" />
+        <Content v-if="content" :sections="content" class="entry-body" journal />
       </div>
     </div>
     <nuxt-link to="/journal" class="viewall">Read more journal entries</nuxt-link>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" :class="{ journal: journal }">
     <div v-for="(section, index) in sections" :key="index" class="content-section">
       <ImageWithCaption :image="section" v-if="section._type == 'mainImage'" />
       <RichText :content="section" v-if="section._type == 'richText'" />
@@ -15,7 +15,8 @@ import Pdf from "~/components/Pdf.vue"
 
 export default {
   props: {
-    sections: Array
+    sections: Array,
+    journal: Boolean
   },
   components: { 
     ImageWithCaption, 
@@ -34,8 +35,16 @@ export default {
   margin: 3rem 0;
   align-items: center;
 
-  p, div {
+  p, div, figure {
     grid-column: span 6;
+  }
+
+  &.journal {
+    margin: 1rem 0;
+    p, div, figure {
+      grid-column: span 12;
+      margin: 0 0 1rem;
+    }
   }
 }
 </style>
