@@ -88,24 +88,24 @@ export default {
     grid-column: 1 / span 12;
     text-transform: uppercase;
     letter-spacing: .1em;
-    font-size: $font-s;
+    font-size: var(--font-s);
     margin-bottom: .8em;
     text-align: center;
   }
 
   &-title {
     grid-column: 1 / span 12;
-    font-family: $serif;
+    font-family: var(--serif);
     font-size: 2rem;
     text-align: center;
-    font-size: $font-l;
+    font-size: var(--font-l);
   }
 
   &-text {
     grid-column: 7 / span 6;
 
     .lead {
-      font-size: $font-lead-s;
+      font-size: var(--font-lead-s);
       margin-bottom: 3rem;
     }
   }
@@ -121,7 +121,7 @@ export default {
   }
 
   &-body {
-    border: 1px solid $color-text;
+    border: 1px solid var(--color-text);
     border-left-width: 0;
     border-right-width: 0;
     padding: 1rem 0;

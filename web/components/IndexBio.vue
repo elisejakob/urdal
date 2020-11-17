@@ -31,4 +31,10 @@ export default {
   position: absolute;
   z-index: 1001;
 }
+@media (max-width: $media-s) {
+  .bio {
+    transform: none;
+    position: static;
+  }
+}
 </style>

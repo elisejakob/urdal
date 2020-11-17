@@ -54,27 +54,27 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 1px solid $color-text;
+  border-top: 1px solid var(--color-text);
   position: relative;
 
   h1 {
-    font-size: $font-l;
-    font-family: $serif;
+    font-size: var(--font-l);
+    font-family: var(--serif);
     margin: 0 0 3rem;
   }
 
   .contact {
     width: 100%;
-    font-family: $serif;
+    font-family: var(--serif);
     margin: auto 0;
     &-label {
-      font-family: $sans-serif;
-      font-size: $font-m;
+      font-family: var(--sans-serif);
+      font-size: var(--font-m);
       margin-bottom: 0;
     }
     &-link {
       display: inline-block;
-      font-size: $font-l;
+      font-size: var(--font-l);
       margin-bottom: 3rem;
       text-decoration: none;
       transition: color .3s ease-in-out;
@@ -82,8 +82,8 @@ footer {
       &:before {
         display: inline-block;
         content: "→";
-        font-size: $font-l;
-        font-family: $sans-serif;
+        font-size: var(--font-l);
+        font-family: var(--sans-serif);
         margin-right: 1rem;
         transform: translateY(.24rem);
       }
@@ -94,7 +94,7 @@ footer {
   }
 
   .credit {
-    font-size: $font-s;
+    font-size: var(--font-s);
     margin: auto 0 0 0;
     padding-right: 6rem;
     width: 100%;
@@ -109,7 +109,7 @@ footer {
     bottom: 0;
     right: 0;
     padding: 2rem;
-    font-size: $font-l;
+    font-size: var(--font-l);
     line-height: 1;
     cursor: pointer;
   }

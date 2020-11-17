@@ -72,6 +72,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
 .about {
   margin-top: 12rem;
 
@@ -83,6 +84,29 @@ export default {
     &-content,
     &-portrait {
       grid-column: span 6;
+    }
+  }
+}
+@media (max-width: $media-s) {
+  .about {
+    margin-top: 6rem;
+
+    &-header {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 2rem;
+
+      &-content,
+      &-portrait {
+        grid-column: span 12;
+      }
+      &-portrait {
+        order: 1;
+        margin-bottom: 2rem;
+      }
+      &-content {
+        order: 2;
+      }
     }
   }
 }

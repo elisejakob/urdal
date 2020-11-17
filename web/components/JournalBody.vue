@@ -39,7 +39,7 @@ export default {
 @import '@/assets/css/variables.scss';
 .journal-body {
   &-readmore {
-    font-family: $sans-serif;
+    font-family: var(--sans-serif);
     font-weight: 500;
     line-height: 1.4;
     display: flex;

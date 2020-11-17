@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
 .content {
   grid-column: 1 / span 12;
   display: grid;
@@ -44,6 +45,14 @@ export default {
     p, div, figure {
       grid-column: span 12;
       margin: 0 0 1rem;
+    }
+  }
+}
+
+@media (max-width: $media-s) {
+  .content {
+    p, div, figure {
+      grid-column: span 12;
     }
   }
 }

@@ -75,8 +75,8 @@ export default {
   }
   &-title {
     width: calc(100% + 4em);
-    font-size: $font-l;
-    font-family: $serif;
+    font-size: var(--font-l);
+    font-family: var(--serif);
     margin: 0 0 4rem;
     text-shadow: -.02em .02em .08em rgba(255, 255, 255, .8);
 
@@ -89,7 +89,7 @@ export default {
     color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: .1em;
-    font-size: $font-s;
+    font-size: var(--font-s);
     padding-left: .24em;
     margin: 0 0 .8rem;
     display: flex;
@@ -99,7 +99,7 @@ export default {
   &-lead {
     grid-column: 1 / span 6;
     p {
-      font-size: $font-lead-s;
+      font-size: var(--font-lead-s);
     }
   }
   &-image {

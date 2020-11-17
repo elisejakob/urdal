@@ -53,4 +53,9 @@ export default {
     transform: translateY(0);
   }
 }
+@media (max-width: $media-s) {
+  .project-list {
+    margin-top: -3rem;
+  }
+}
 </style>

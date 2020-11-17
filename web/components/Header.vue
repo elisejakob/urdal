@@ -36,12 +36,12 @@ header {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient($color-background, rgba(255, 255, 255, 0));
+  background: linear-gradient(var(--color-background), rgba(255, 255, 255, 0));
 
   .site-title {
-    font-family: $serif;
+    font-family: var(--serif);
     font-weight: 400;
-    font-size: $font-l;
+    font-size: var(--font-l);
     margin: 0;
     line-height: 1;
   }
@@ -53,7 +53,7 @@ header {
   nav a {
     margin-left: 2rem;
     transition: all .24s ease;
-    font-size: $font-m;
+    font-size: var(--font-m);
 
     &:hover {
       color: var(--link-color);
@@ -65,6 +65,13 @@ header {
       &:hover {
         color: inherit;
       }
+    }
+  }
+}
+@media (max-width: $media-s) {
+  header {
+    nav a {
+      font-size: 1rem;
     }
   }
 }

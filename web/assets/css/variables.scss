@@ -1,43 +1,54 @@
-/* FONTS — — — — — — — — — — — — */
+:root {
+  /* FONTS — — — — — — — — — — — — */
 
-$serif: 'Recife Text', serif;
-$sans-serif: 'Good Sans', sans-serif;
-
-
-/* COLORS — — — — — — — — — — — — */
-
-$color-white: #fff;
-$color-black: #000;
-$color-highlight: rgb(255, 159, 50);
+  --serif: 'Recife Text', serif;
+  --sans-serif: 'Good Sans', sans-serif;
 
 
-/* WIDTHS & SPACING — — — — — — — — — — — — */
+  /* COLORS — — — — — — — — — — — — */
 
-$width-xs: 21rem;
-$width-s: 30rem;
-$width-m: 42rem;
-$width-l: 56rem;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-highlight: rgb(255, 159, 50);
 
-$spacing-l: 5rem;
-$spacing-m: 3rem;
-$spacing-s: 1rem;
 
-$font-xs: .6rem;
-$font-s: .9rem;
-$font-lead-s: 1.3rem;
-$font-m: 1.8rem;
-$font-l: 4.2rem;
+  /* WIDTHS & SPACING — — — — — — — — — — — — */
+
+  --width-xs: 21rem;
+  --width-s: 30rem;
+  --width-m: 42rem;
+  --width-l: 56rem;
+
+  --spacing-l: 5rem;
+  --spacing-m: 3rem;
+  --spacing-s: 1rem;
+
+  --font-xs: .6rem;
+  --font-s: .9rem;
+  --font-lead-s: 1.3rem;
+  --font-m: 1.8rem;
+  --font-l: 4.2rem;
+
+  /* IN USE — — — — — — — — — — — — */
+
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+}
 
 
 /* MEDIA QUERIES — — — — — — — — — — — — */
 
-$media-s: 700px;
+$media-s: 830px;
 $media-m: 1000px;
 $media-l: 1600px;
 $media-xl: 1900px;
 
-
-/* IN USE — — — — — — — — — — — — */
-
-$color-background: $color-white;
-$color-text: $color-black;
+@media (max-width: $media-s) {
+  :root {
+    --font-m: 1.4rem;
+    --font-l: 2.4rem;
+  }
+  body {
+    background: pink;
+  }
+}

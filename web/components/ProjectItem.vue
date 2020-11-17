@@ -131,7 +131,7 @@ export default {
     }
   }
   &-ongoing {
-    font-size: $font-xs;
+    font-size: var(--font-xs);
     text-align: right;
     text-transform: uppercase;
     letter-spacing: .1em;
@@ -161,6 +161,27 @@ export default {
 @media (max-width: $media-s) {
   .project {
     grid-column: span 12;
+    &:nth-child(3n+3) {  
+      .project-text {
+        order: 2;
+        transform: translate(0, -1.5rem);
+      }
+      .project-image {
+        order: 1;
+        transform: translate(-2rem, 0);
+      }
+    }
+  }
+  .project-list.index {
+    .project:first-of-type {
+      margin-top: 0;
+    }
+    .project:nth-of-type(2) {
+      margin-top: 0;
+    }
+    .project:nth-of-type(3) {
+      margin-top: 0;
+    }
   }
 }
 </style>
