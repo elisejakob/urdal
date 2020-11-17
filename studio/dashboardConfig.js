@@ -2,6 +2,16 @@ export default {
   widgets: [
     {name: 'structure-menu'},
     {
+      name: 'document-list',
+      options: {title: 'Recent projects', order: '_createdAt desc', types: ['project']},
+      layout: {width: 'medium'}
+    },
+    {
+      name: 'document-list',
+      options: {title: 'Recent journal entries', order: '_createdAt desc', types: ['journal']},
+      layout: {width: 'medium'}
+    },
+    {
       name: 'project-info',
       options: {
         __experimental_before: [
@@ -36,10 +46,5 @@ export default {
       }
     },
     {name: 'project-users', layout: {height: 'auto'}},
-    {
-      name: 'document-list',
-      options: {title: 'Recently created projects', order: '_createdAt desc', types: ['project']},
-      layout: {width: 'medium'}
-    }
   ]
 }
