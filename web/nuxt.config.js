@@ -3,7 +3,8 @@ import sanityClient from './sanityClient'
 
 const routesQuery = `
   {
-    "projects": *[_type == "project"]
+    "projects": *[_type == "project"],
+    "journal": *[_type == "journal"]
   }
 `
 
@@ -52,7 +53,8 @@ export default {
     routes: () => {
       return sanityClient.fetch(routesQuery).then(res => {
         return [
-          ...res.projects.map(item => `/projects/${item._id}`)
+          ...res.projects.map(item => `/projects/${item.slug.current}`),
+          ...res.journal.map(item => `/journal/${item.slug.current}`)
         ]
       })
     }

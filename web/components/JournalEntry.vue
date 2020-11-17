@@ -2,7 +2,7 @@
   <li class="entry">
     <Date v-if="entry.publishedAt" :rawDate="entry.publishedAt" journal class="entry-date" />
     <h2 class="entry-title">
-      <nuxt-link :to="`/journal/${entry._id}`">
+      <nuxt-link :to="`/journal/${entry.slug.current}`">
         {{ entry.title }}
       </nuxt-link>
     </h2>

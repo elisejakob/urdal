@@ -29,7 +29,7 @@ import SanityImage from '~/components/SanityImage'
 import Date from '~/components/Date'
 
 const query = groq`
-  *[_type == "journal" && _id == $id] {
+  *[_type == "journal" && slug.current == $slug] {
     ...,
     journal[] {
       journal-> {

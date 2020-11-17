@@ -28,7 +28,7 @@ import Content from '~/components/Content'
 import ProjectHeader from '~/components/ProjectHeader'
 
 const query = groq`
-  *[_type == "project" && _id == $id] {
+  *[_type == "project" && slug.current == $slug] {
     ...,
     projects[] {
       project-> {

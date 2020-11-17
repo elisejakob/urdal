@@ -59,6 +59,10 @@ p {
     max-width: 54rem;
     line-height: 1.5;
     margin: 0 0 1.4em;
+
+    + p {
+      text-indent: 0;
+    }
   }
 }
 

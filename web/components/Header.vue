@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :style="cssVars">
     <h1 class="site-title">
       <nuxt-link to="/" class="home">Urdal</nuxt-link>
     </h1>
@@ -11,6 +11,18 @@
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    cssVars() {
+      return {
+        '--link-color': this.$store.state.global.mainColor.hex
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
@@ -44,7 +56,7 @@ header {
     font-size: $font-m;
 
     &:hover {
-      color: $color-highlight;
+      color: var(--link-color);
     }
 
     &.nuxt-link-active {

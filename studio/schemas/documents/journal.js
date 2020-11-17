@@ -12,6 +12,17 @@ export default {
       title: 'Title'
     },
     {
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: 'The slug is the end of the URL for this page. It should be short and can not contain any spaces or special characters. Ex. theaurdal.com/journal/slug-goes-here',
+      validation: Rule => Rule.error('The page needs a slug.').required(),
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
+    },
+    {
       name: 'publishedAt',
       title: 'Published',
       type: 'datetime'

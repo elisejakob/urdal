@@ -1,6 +1,6 @@
 <template>
   <li class="project" :style="cssVars">
-    <nuxt-link :to="{ path: `/projects/${project._id}` }">
+    <nuxt-link :to="{ path: `/projects/${project.slug.current}` }">
       <SanityImage v-if="project.image" :image="project.image" class="project-image" />
       <div class="project-text">
         <h3>
@@ -16,6 +16,7 @@
     </nuxt-link>
   </li>
 </template>
+
 <script>
 import SanityImage from '~/components/SanityImage'
 
@@ -138,7 +139,7 @@ export default {
 }
 .project-list.index {
   .project:first-of-type {
-    margin-top: 4rem;
+    margin-top: 7.2rem;
   }
   .project:nth-of-type(2) {
     margin-top: 6rem;

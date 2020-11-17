@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer :style="cssVars">
     <h1>Contact</h1>
     <div class="contact" id="contact">
       <h2 class="contact-label">E-mail</h2>
@@ -29,6 +29,11 @@ export default {
   computed: {
     footer() {
       return this.$store.state.global.footer
+    },
+    cssVars() {
+      return {
+        '--link-color': this.$store.state.global.mainColor.hex
+      }
     }
   },
   methods: {
@@ -83,7 +88,7 @@ footer {
         transform: translateY(.24rem);
       }
       &:hover {
-        color: $color-highlight;
+        color: var(--link-color);
       }
     }
   }

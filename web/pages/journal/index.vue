@@ -42,6 +42,11 @@ export default {
 
 <style lang="scss" scoped>
 .journal {
-  margin-top: 8rem;
+  margin-top: 6rem;
+
+  > .lead {
+    font-size: 1rem;
+    max-width: 36rem;
+  }
 }
 </style>
