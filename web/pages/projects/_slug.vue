@@ -15,7 +15,12 @@
       :blocks="description"
       v-if="description"
     />
-    <Content v-if="content" :sections="content" />
+    <Content 
+      v-if="content"
+      :sections="content"
+      :bgColor="bgColor"
+      :textColor="textColor"
+    />
   </main>
 </template>
 

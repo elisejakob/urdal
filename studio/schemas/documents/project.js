@@ -1,10 +1,7 @@
-import icon from 'react-icons/lib/md/collections'
-
 export default {
   name: 'project',
   type: 'document',
   title: 'Project',
-  icon,
   fields: [
     {
       name: 'title',

@@ -11,7 +11,9 @@
           {{ project.summary }}
         </p>
         <div v-if="project.ongoing" class="project-ongoing">Ongoing</div>
-        <div v-if="project.norwegian" class="project-ongoing">Only in Norwegian</div>
+      </div>
+      <div v-if="project.norwegian" class="project-norwegian">
+        <img src="/only-in-norwegian.svg" />
       </div>
     </nuxt-link>
   </li>
@@ -49,6 +51,7 @@ export default {
 .project {
   grid-column: span 4;
   padding: 2rem;
+  position: relative;
 
   a {
     text-decoration: none;
@@ -91,6 +94,10 @@ export default {
       transform: translate(1.5rem, -2rem);
       transition: all .6s ease;
     }
+    .project-norwegian {
+      transform: rotate(360deg);
+      transition: transform 6s linear;
+    }
   }
 
   &:nth-child(odd) {
@@ -109,6 +116,7 @@ export default {
       }
       .project-text {
         transform: translate(1.2rem, -3rem);
+        box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
       }
     }
   }
@@ -135,6 +143,16 @@ export default {
     text-align: right;
     text-transform: uppercase;
     letter-spacing: .1em;
+  }
+  &-norwegian {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    transform: rotate(36deg);
+    transition: transform 1s linear;
   }
 }
 .project-list.index {
@@ -182,6 +200,15 @@ export default {
     .project:nth-of-type(3) {
       margin-top: 0;
     }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>

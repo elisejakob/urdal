@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss">
 .richtext {
-  margin: 0 0 7rem;
+  margin: 0 0 3rem;
   width: 100%;
   max-width: 36rem;
 

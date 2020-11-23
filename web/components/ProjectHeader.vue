@@ -64,6 +64,7 @@ export default {
 @import '@/assets/css/variables.scss';
 
 .project-header {
+  grid-column: span 12;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 2rem;

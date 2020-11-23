@@ -3,7 +3,7 @@
     <div v-for="(section, index) in sections" :key="index" class="content-section">
       <ImageWithCaption :image="section" v-if="section._type == 'mainImage'" />
       <RichText :content="section" v-if="section._type == 'richText'" />
-      <Pdf :content="section" v-if="section._type == 'pdf'" />
+      <Pdf :content="section" :bgColor="bgColor" v-if="section._type == 'pdf'" />
     </div>
   </div>
 </template>
@@ -16,7 +16,9 @@ import Pdf from "~/components/Pdf.vue"
 export default {
   props: {
     sections: Array,
-    journal: Boolean
+    journal: Boolean,
+    bgColor: Object,
+    textColor: Object
   },
   components: { 
     ImageWithCaption, 
@@ -41,6 +43,7 @@ export default {
   }
 
   &.journal {
+    grid-column: 1 / span 12;
     margin: 1rem 0;
     p, div, figure {
       grid-column: span 12;
@@ -53,6 +56,26 @@ export default {
   .content {
     p, div, figure {
       grid-column: span 12;
+    }
+  }
+}
+
+@media (min-width: $media-l) {
+  .content {
+    p, div, figure {
+      grid-column: 2 / span 5;
+      &:nth-child(even) {
+        grid-column: 7 / span 5;
+      }
+    }
+    &.journal {
+      grid-column: 1 / span 12;
+      p, div, figure {
+        grid-column: span 12;
+        &:nth-child(even) {
+          grid-column: span 12;
+        }
+      }
     }
   }
 }

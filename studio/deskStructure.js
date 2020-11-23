@@ -1,5 +1,4 @@
 import S from '@sanity/desk-tool/structure-builder'
-import MdPerson from 'react-icons/lib/md/person'
 
 const hiddenDocTypes = listItem =>
   !['project', 'journal', 'about', 'general'].includes(listItem.getId())
@@ -18,7 +17,6 @@ export default () =>
         .child(S.documentTypeList('journal').title('Journal')),
       S.listItem()
         .title('About')
-        .icon(MdPerson)
         .child(
           S.editor()
             .id('about')

@@ -1,7 +1,8 @@
 <template>
   <main class="journal">
     <p class="lead">{{ intro.journal }}</p>
-    <Journal v-if="journal" :entries="journal" />
+    <Journal v-if="journal" :entries="journal.slice(0, this.limit)" />
+    <div v-if="hasMore" class="show-more" @click="showMore()">Show more journal entries</div>
   </main>
 </template>
 
@@ -36,6 +37,21 @@ export default {
         }
       ]
     }
+  },
+  data() {
+    return {
+      limit: 6
+    }
+  },
+  computed: {
+    hasMore() {
+      return this.limit < this.journal.length
+    }
+  },
+  methods: {
+    showMore() {
+      this.limit += this.limit;
+    }
   }
 }
 </script>
@@ -47,6 +63,13 @@ export default {
   > .lead {
     font-size: 1rem;
     max-width: 36rem;
+  }
+
+  .show-more {
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 </style>

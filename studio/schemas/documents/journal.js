@@ -1,10 +1,7 @@
-import icon from 'react-icons/lib/md/library-books'
-
 export default {
   name: 'journal',
   type: 'document',
   title: 'Journal',
-  icon,
   fields: [
     {
       name: 'title',
