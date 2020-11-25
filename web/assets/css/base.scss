@@ -47,12 +47,12 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   max-width: 36rem;
-  margin: 0;
+  margin: 0 0 1.4rem;
   line-height: 1.8;
 
-  + p {
-    text-indent: 3em;
-  }
+  /*+ p {
+    margin-bottom: 1rem;
+  }*/
 
   &.lead {
     font-size: var(--font-m);
@@ -68,7 +68,7 @@ p {
 
 ul, ol {
   max-width: 36rem;
-  margin: 0;
+  margin: 0 0 1.4rem;
   line-height: 1.8;
 }
 

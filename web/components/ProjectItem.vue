@@ -52,6 +52,8 @@ export default {
   grid-column: span 4;
   padding: 2rem;
   position: relative;
+  z-index: 6;
+  margin-bottom: -6rem;
 
   a {
     text-decoration: none;
@@ -66,13 +68,14 @@ export default {
   }
   &-text {
     border: 1px solid var(--text-color);
-    padding: 1.4rem;
+    padding: 1.4rem 1.4rem 1.6rem;
     margin: 0;
     z-index: 10;
     transform: translate(1.5rem, -1.5rem);
     transition: all .3s ease;
     p {
       line-height: 1.3;
+      margin-bottom: 1rem;
     }
   }
   h3 {
@@ -150,7 +153,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 3;
+    z-index: 60;
     transform: rotate(36deg);
     transition: transform 1s linear;
   }
@@ -174,6 +177,17 @@ export default {
 @media (max-width: $media-m) {
   .project {
     grid-column: span 6;
+    margin-bottom: 0;
+    &:nth-child(3n+3) {  
+      .project-text {
+        order: 2;
+        transform: translate(0, -1.5rem);
+      }
+      .project-image {
+        order: 1;
+        transform: translate(2rem, 0);
+      }
+    }
   }
 }
 @media (max-width: $media-s) {

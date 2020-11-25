@@ -64,6 +64,14 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.lead
+        },
+        {
+          name: 'og:title',
+          content: this.title + '| Urdal'
+        },
+        {
+          name: 'og:description',
+          content: this.lead
         }
       ]
     }

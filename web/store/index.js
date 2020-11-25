@@ -15,7 +15,8 @@ export const actions = {
     const query = `
       *[_id == "general"][0] {
         footer,
-        mainColor
+        mainColor,
+        ogimg
       }
     `
     await sanityClient.fetch(query).then(response => {

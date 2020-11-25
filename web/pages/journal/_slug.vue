@@ -13,8 +13,8 @@
         <p class="lead" v-if="summary">
           {{ summary }}
         </p>
-        <BlockContent v-if="body" :blocks="body" class="entry-body" />
-        <Content v-if="content" :sections="content" class="entry-body" journal />
+        <BlockContent v-if="body" :blocks="body" />
+        <Content v-if="content" :sections="content" journal />
       </div>
     </div>
     <nuxt-link to="/journal" class="viewall">Read more journal entries</nuxt-link>
@@ -27,6 +27,7 @@ import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import SanityImage from '~/components/SanityImage'
 import Date from '~/components/Date'
+import Content from '~/components/Content'
 
 const query = groq`
   *[_type == "journal" && slug.current == $slug] {
@@ -46,6 +47,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    Content,
     SanityImage,
     Date
   },
@@ -59,6 +61,14 @@ export default {
         {
           hid: 'description',
           name: 'description',
+          content: this.lead
+        },
+        {
+          name: 'og:title',
+          content: this.title + '| Urdal'
+        },
+        {
+          name: 'og:description',
           content: this.lead
         }
       ]

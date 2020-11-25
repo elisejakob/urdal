@@ -34,7 +34,7 @@ export default {
 @import '@/assets/css/variables.scss';
 .project-list {
   margin: 0;
-  padding: 0;
+  padding: 0 0 6rem;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(12, 1fr);

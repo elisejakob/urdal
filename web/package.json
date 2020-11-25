@@ -1,7 +1,7 @@
 {
-  "name": "urdal-web",
+  "name": "Urdal",
   "version": "1.0.11",
-  "description": "An event website powered by Nuxt and Sanity.io",
+  "description": "Portfolio of designer/journalist Thea Urdal.",
   "author": "Sanity.io",
   "private": true,
   "scripts": {
