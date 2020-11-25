@@ -1,12 +1,13 @@
 <template>
   <main>
-    <ProjectList v-if="projects" :projects="projects" />
+    <ProjectListMasonry v-if="projects" :projects="projects" />
   </main>
 </template>
 
 <script>
 import sanityClient from '~/sanityClient'
-import ProjectList from '~/components/ProjectList'
+//import ProjectList from '~/components/ProjectList'
+import ProjectListMasonry from '~/components/ProjectListMasonry'
 
 const query = `
   {
@@ -15,7 +16,7 @@ const query = `
 `
 
 export default {
-  components: { ProjectList },
+  components: { ProjectListMasonry },
   async asyncData() {
     return await sanityClient.fetch(query)
   },

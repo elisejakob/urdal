@@ -1,8 +1,8 @@
 <template>
-  <div class="content" :class="{ journal: journal }">
+  <div class="content" :class="{ journal: journal, about: about }">
     <div v-for="(section, index) in sections" :key="index" class="content-section">
       <ImageWithCaption :image="section" v-if="section._type == 'mainImage'" />
-      <RichText :content="section" v-if="section._type == 'richText'" />
+      <RichText :content="section" v-if="section._type == 'richText'" about />
       <Pdf :content="section" :bgColor="bgColor" v-if="section._type == 'pdf'" />
     </div>
   </div>
@@ -17,6 +17,7 @@ export default {
   props: {
     sections: Array,
     journal: Boolean,
+    about: Boolean,
     bgColor: Object,
     textColor: Object
   },
@@ -42,12 +43,17 @@ export default {
     grid-column: span 6;
   }
 
-  &.journal {
+  &.journal, &.about {
     grid-column: 1 / span 12;
     margin: 1rem 0;
     p, div, figure {
       grid-column: span 12;
       margin: 0 0 1rem;
+    }
+  }
+  &.about {
+    p, div, figure {
+      margin: 0 0 2rem;
     }
   }
 }
@@ -68,7 +74,7 @@ export default {
         grid-column: 7 / span 5;
       }
     }
-    &.journal {
+    &.journal, &.about {
       grid-column: 1 / span 12;
       p, div, figure {
         grid-column: span 12;

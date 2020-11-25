@@ -10,7 +10,7 @@
         <figcaption>{{ image.caption }}</figcaption>
       </figure>
     </div>
-    <Content v-if="content" :sections="content" />
+    <Content v-if="content" :sections="content" about />
   </main>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="richtext">
+  <div class="richtext" :class="{ about: 'about' }">
      <BlockContent
         :blocks="content.body"
         :v-if="content.body"
@@ -12,7 +12,8 @@ import BlockContent from 'sanity-blocks-vue-component'
 
 export default {
   props: {
-    content: Object
+    content: Object,
+    about: Boolean
   },
   components: {
     BlockContent
@@ -33,6 +34,10 @@ export default {
     }
   }
 
+  h2 {
+    font-size: var(--font-m);
+  }
+
   p {
     margin: 0 0 .75rem;
   }
@@ -42,6 +47,27 @@ export default {
     padding: 0 1rem;
     li {
       margin-bottom: .5rem;
+    }
+  }
+
+  &.about {
+    max-width: none;
+
+    ul {
+      max-width: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin: .5rem .6rem 0 0;
+        &:after {
+          content: "/";
+          display: inline-block;
+          margin-left: .3rem;
+        }
+      }
     }
   }
 }

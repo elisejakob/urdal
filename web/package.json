@@ -17,7 +17,8 @@
     "cross-env": "^5.2.0",
     "groq": "^0.140.0",
     "nuxt": "^2.14.7",
-    "sanity-blocks-vue-component": "^0.1.0"
+    "sanity-blocks-vue-component": "^0.1.0",
+    "vue-masonry-wall": "^0.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10",

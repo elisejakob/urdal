@@ -112,6 +112,20 @@ export default {
     }
   }
 }
+@media (max-width: $media-m) {
+  .project {
+    &-text {
+      grid-column: span 12;
+      padding: 8rem 0 0;
+    }
+    &-title {
+      width: 100%;
+    }
+    &-image {
+      grid-column: span 12;
+    }
+  }
+}
 @keyframes fadeDown {
   to {
     opacity: 1;

@@ -152,6 +152,7 @@ li:nth-child(odd) {
   }
 }
 .viewall {
-  grid-column: 2 / span 10;
+  grid-column: 1 / span 12;
+  text-align: center;
 }
 </style>

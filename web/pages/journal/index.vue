@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return {
-      limit: 6
+      limit: 10
     }
   },
   computed: {
