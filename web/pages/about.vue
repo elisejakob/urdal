@@ -66,10 +66,12 @@ export default {
           content: this.lead
         },
         {
+          hid: 'og:title',
           name: 'og:title',
           content: this.title + '| Urdal'
         },
         {
+          hid: 'og:description',
           name: 'og:description',
           content: this.lead
         }

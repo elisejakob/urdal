@@ -30,6 +30,7 @@ export default {
           content: this.lead
         },
         {
+          hid: 'og:title',
           name: 'og:title',
           content: this.title + '| Urdal'
         }
