@@ -40,7 +40,8 @@ const query = groq`
         ...,
         image {
           ...,
-          asset->
+          asset->,
+          "ogimage": asset->url
         },
         content
       }
@@ -70,12 +71,17 @@ export default {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title + '| Urdal'
+          content: this.title + ' | Urdal'
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.lead
+          content: this.summary
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.image.ogimage
         }
       ]
     }

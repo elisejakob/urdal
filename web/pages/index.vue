@@ -24,17 +24,6 @@ export default {
     ProjectList,
     IndexBio
   },
-  computed: {
-    ogimg() {
-      return this.getUrl(this.$store.state.global.ogimg.asset._ref)
-    }
-  },
-  methods: {
-    getUrl(ref) {
-      const [_file, id, extension] = ref.split('-')
-      return `https://cdn.sanity.io/images/u2ny62rh/production/${id}.png`
-    }
-  },
   async asyncData() {
     return await sanityClient.fetch(query)
   },
@@ -48,16 +37,19 @@ export default {
           content: this.about.lead
         },
         {
+          hid: 'og:title',
           name: 'og:title',
           content: 'Urdal'
         },
         {
+          hid: 'og:description',
           name: 'og:description',
           content: this.about.lead
         },
         {
+          hid: 'og:image',
           name: 'og:image',
-          content: this.ogimg
+          content: this.$store.state.global.ogimage
         }
       ]
     }

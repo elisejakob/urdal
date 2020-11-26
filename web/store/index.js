@@ -16,7 +16,7 @@ export const actions = {
       *[_id == "general"][0] {
         footer,
         mainColor,
-        ogimg
+        "ogimage": ogimg.asset->url
       }
     `
     await sanityClient.fetch(query).then(response => {

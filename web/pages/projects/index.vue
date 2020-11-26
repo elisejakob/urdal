@@ -32,7 +32,12 @@ export default {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title + '| Urdal'
+          content: this.title + ' | Urdal'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.$store.state.global.ogimage
         }
       ]
     }
