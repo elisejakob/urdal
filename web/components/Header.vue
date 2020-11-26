@@ -70,8 +70,16 @@ header {
 }
 @media (max-width: $media-s) {
   header {
+    display: block;
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
     nav a {
       font-size: 1rem;
+      margin: 0;
     }
   }
 }

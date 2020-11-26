@@ -26,6 +26,16 @@ header, main, footer {
   padding: 2rem;
 }
 
+@media (max-width: $media-s) {
+  header, main, footer {
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  main {
+    padding-top: 3rem;
+  }
+}
+
 main {
   margin: 4.8rem auto 4rem;
   opacity: 0;

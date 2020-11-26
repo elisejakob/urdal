@@ -163,4 +163,45 @@ li:nth-child(odd) {
   grid-column: 1 / span 12;
   text-align: center;
 }
+@media (max-width: $media-m) {
+  .entry {
+    grid-column: 1 / span 12;
+  }
+}
+
+@media (max-width: $media-s) {
+  .entry {
+    grid-column: 1 / span 12;
+    &-text {
+      grid-column: 1 / span 12;
+    }
+
+    &-image {
+      grid-column: 1 / span 12;
+      margin-bottom: 2rem;
+    }
+
+    &-body {
+      border: 1px solid var(--color-text);
+      border-left-width: 0;
+      border-right-width: 0;
+      padding: 1rem 0;
+    }
+  }
+  li:nth-child(odd) {
+    .entry {
+      &-image {
+        grid-column: 1 / span 12;
+        order: 1;
+      }
+      &-text {
+        grid-column: 1 / span 12;
+        order: 2;
+      }
+      &-body {
+        order: 3;
+      }
+    }
+  }
+}
 </style>

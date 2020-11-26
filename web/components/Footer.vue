@@ -114,4 +114,24 @@ footer {
     cursor: pointer;
   }
 }
+@media (max-width: $media-s) {
+  footer {
+    .contact {
+      &-link {
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .credit {
+      padding-right: 0;
+      padding-bottom: 3rem;
+    }
+    .totop {
+      position: static;
+      text-align: right;
+      padding: 0;
+    }
+  }
+}
 </style>

@@ -1,13 +1,13 @@
 <template>
   <main>
     <IndexBio :content="about.lead" />
-    <ProjectList index :projects="projects" />
+    <ProjectListMasonry index :projects="projects" />
   </main>
 </template>
 
 <script>
 import sanityClient from '~/sanityClient'
-import ProjectList from '~/components/ProjectList'
+import ProjectListMasonry from '~/components/ProjectListMasonry'
 import IndexBio from '~/components/IndexBio'
 
 const query = `
@@ -21,7 +21,7 @@ const query = `
 
 export default {
   components: {
-    ProjectList,
+    ProjectListMasonry,
     IndexBio
   },
   async asyncData() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="project" :style="cssVars" :class="classes">
+  <div class="project" :style="cssVars" :class="allClasses">
     <nuxt-link :to="{ path: `/projects/${project.slug.current}` }">
       <SanityImage v-if="project.image" :image="project.image" class="project-image" />
       <div class="project-text">
@@ -27,7 +27,8 @@ export default {
   props: {
     project: Object,
     index: Number,
-    classes: Array
+    classes: Array,
+    frontpage: Boolean
   },
   computed: {
     cssVars() {
@@ -41,6 +42,13 @@ export default {
         '--bg-color': this.$store.state.global.mainColor.hex,
         '--text-color': '#000',
       }
+    },
+    allClasses() {
+      if (this.frontpage) {
+        this.classes.push("frontpage")
+        return this.classes
+      }
+      return this.classes
     }
   }
 }
@@ -104,7 +112,7 @@ export default {
     }
   }
 
-  &.border {
+  &.fill {
     margin-top: 2rem;
     .project-text {
       background: var(--bg-color);
@@ -125,6 +133,13 @@ export default {
       }
     }
   }
+  &.frontpage {
+    margin-top: 3rem;
+    &.fill {
+      margin-top: 0;
+    }
+  }
+  
   &:nth-child(3n+3) {  
     .project-text {
       order: 1;
@@ -158,17 +173,6 @@ export default {
     z-index: 60;
     transform: rotate(36deg);
     transition: transform 1s linear;
-  }
-}
-.project-list.index {
-  .project:first-of-type {
-    margin-top: 7.2rem;
-  }
-  .project:nth-of-type(2) {
-    margin-top: 6rem;
-  }
-  .project:nth-of-type(3) {
-    margin-top: -6rem;
   }
 }
 @media (min-width: $media-l) {

@@ -122,6 +122,7 @@ li:nth-child(odd) {
 
 @media (max-width: $media-s) {
   .entry {
+    grid-column: 1 / span 12;
     &-text {
       grid-column: 1 / span 12;
     }
