@@ -38,7 +38,7 @@ export default {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title + ' | Urdal'
+          content: 'Journal | Urdal'
         },
         {
           hid: 'og:image',

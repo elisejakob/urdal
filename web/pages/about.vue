@@ -69,7 +69,7 @@ export default {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.title + ' | Urdal'
+          content: 'About | Urdal'
         },
         {
           hid: 'og:description',

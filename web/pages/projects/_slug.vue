@@ -66,7 +66,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.lead
+          content: this.summary
         },
         {
           hid: 'og:title',
