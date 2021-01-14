@@ -12,7 +12,7 @@ import IndexBio from '~/components/IndexBio'
 
 const query = `
   {
-    "projects": *[_type == "project" && featured],
+    "projects": *[_type == "project" && featured] | order(publishedAt desc),
     "about": *[_id == "about"][0] {
       lead
     }
